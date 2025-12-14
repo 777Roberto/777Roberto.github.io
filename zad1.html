@@ -3,67 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Znaczniki HTML – formatowanie tekstu</title>
+
+    <style>
+        body {
+            font-family: 'Anton', sans-serif;
+            background: linear-gradient(135deg, #FFE066, #FFF3B0);
+            padding: 24px;
+            line-height: 1.6;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+    </style>
 </head>
 <body>
 
-   
     <p>To jest zwykły paragraf tekstu.</p>
 
-   
     <p>
         <b>Pogrubienie</b>,
         <i>Pochylenie</i>,
         <u>Podkreślenie</u>
     </p>
 
-   
     <p>
         Indeks górny: x<sup>2</sup><br>
         Indeks dolny: H<sub>2</sub>O
     </p>
 
-   
     <p style="color: blue; font-family: Arial; font-size: 20px;">
         Tekst w kolorze niebieskim, czcionka Arial, rozmiar 20px
     </p>
 
-    
     <p>
         To jest pierwsza linia<br>
         To jest druga linia
     </p>
 
-   
     <hr>
 
     <p>
         <a href="https://www.wikipedia.org" target="_blank">Przejdź do Wikipedii</a>
     </p>
-    
-<div style="
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #E6CCFF, #CFA8FF, #A77BFF, #6A0DAD);
-    padding: 15px 20px;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
-    z-index: 1000; 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;">
-    
-    <a href="index.html" style="
-        text-decoration: none;
-        color: #FFFFFF;
-        background-color: #9a21bf;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-weight: bold;
-        font-size: 18px;">
-        Powrót do strony głównej
-    </a>
-</div>
+
+    <div style="
+        position: fixed; 
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #E6CCFF, #CFA8FF, #A77BFF, #6A0DAD);
+        padding: 15px 20px;
+        box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+        z-index: 1000; 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;">
+        
+        <a href="index.html" style="
+            text-decoration: none;
+            color: #FFFFFF;
+            background-color: #9a21bf;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;">
+            Powrót do strony głównej
+        </a>
+    </div>
 
 </body>
 </html>
