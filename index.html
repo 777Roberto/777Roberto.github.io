@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--Informacje o stronie-->
-  <meta charset="utf-8">   <!--Dzięki temu poprawnie zostaną wyświetlone wszystkie znaki tekstowe.-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--Dzięki temu, widok treści dostosowuje się do urządzenia.-->
+  <meta charset="utf-8">   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
   <title>Robert karaś</title>
   <style>
     
-  body /*Ogólne ustawienia stylu strony*/
-    {font-family: 'Agdasima', sans-serif; /*Ustawia czcionkę strony.*/
-    background: linear-gradient(135deg, #B3CFF0, #D9C2F0); /*Ustawia tło z gradientem.*/
-    padding: 24px; /* Dodaje margines.*/
-    line-height: 1.6; /*Ustawia odstęp między tekstami.*/
-    background-size: cover; /*Dopasowuje gradient do rozmiarów ekranu.*/
-    background-attachment: fixed; /*Tło nie przesuwa się podczas przewijania.*/
-    background-position: center center;} /*Ustawia tło w centrum strony.*/
+  body 
+    {font-family: 'Agdasima', sans-serif; 
+    background: linear-gradient(135deg, #B3CFF0, #D9C2F0); 
+    padding: 24px; 
+    line-height: 1.6; 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center center;} 
 
 h1 /*Nagłówek*/
-      {font-family: 'Agdasima', sans-serif; /*Ustawia czcionkę nagłówka.*/
-      font-size: 42px; /*Ustawia rozmiar czcionki nagłówka.*/
-      color: #FFFFFF; /*Ustawia kolor tekstu nagłówka.*/
-      text-align: center; /*Wyrównuje nagłówek do środka.*/
-      padding: 20px 0; /*Dodaje marginesy do nagłówka.*/
-      border-radius: 0; /*Zaokrągla rogi nagłówka.*/
-      box-shadow: inset 0 -6px 12px rgba(255, 255, 255, 0.25), 0 6px 20px rgba(0,0,0,0.3); /*Ustawia cień wokół nagłówka.*/
-      text-shadow: -2px -2px 1px #000, 2px -2px 1px #000, -2px  2px 1px #000, 2px  2px 1px #000, 0 0 4px #000; /*Ustawia cień dla tekstu nagłówka.*/
-      transition: all 0.4s ease; /*Płynne przejście przy zmianie tła.*/
-      background: linear-gradient(270deg, #5E50FF, #7A68FF, #A079FF, #C6A3FF, #8C9EFF, #5E50FF); /*Ustawia tło nagłówka z gradientem.*/
-      background-size: 600% 600%; /*Ustawia rozmiar tła nagłówka z gradientem.*/
-      animation: gradientMove 25s ease infinite; /*Ustawia animację tła nagłówka z gradientem.*/
-      display: block; /*Nagłówek jest wyświetlany w osobnej lini, zajmując całą szerokość.*/
-      width: 100%;} /*Nagłówek zajmuje całą szerokość.*/
+      {font-family: 'Agdasima', sans-serif; 
+      font-size: 42px; 
+      color: #FFFFFF; 
+      text-align: center; 
+      padding: 20px 0; 
+      border-radius: 0; 
+      box-shadow: inset 0 -6px 12px rgba(255, 255, 255, 0.25), 0 6px 20px rgba(0,0,0,0.3);
+      text-shadow: -2px -2px 1px #000, 2px -2px 1px #000, -2px  2px 1px #000, 2px  2px 1px #000, 0 0 4px #000;
+      transition: all 0.4s ease; 
+      background: linear-gradient(270deg, #5E50FF, #7A68FF, #A079FF, #C6A3FF, #8C9EFF, #5E50FF); 
+      background-size: 600% 600%;
+      animation: gradientMove 25s ease infinite; 
+      display: block; 
+      width: 100%;} 
 
-      @keyframes gradientMove { /*Pozwala na utworzenie animacji przesuwającego się gradientu.*/
+      @keyframes gradientMove { 
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }}
-      /*Ustawienia pozycji gradientu. Początkowej, środkowej i końcowej.*/
 
-     /* Ustawienia dla nagłówka podczas najechania na niego.*/
+     
     h1:hover 
-      {box-shadow: 0 12px 30px rgba(0,0,0,0.3); /* Zwiększa cień przy najechaniu */
+      {box-shadow: 0 12px 30px rgba(0,0,0,0.3); 
       background: linear-gradient(270deg, #7A68FF, #A079FF, #C6A3FF, #D9BFFF, #8C9EFF, #7A68FF); 
-      background-size: 600% 600%; /*Ustawia rozmiar gradientu podczas najeżdżania na niego myszką.*/
-      color: #E0FFFF; /*Zmiana koloru tekstu*/
+      background-size: 600% 600%; 
+      color: #E0FFFF; 
       text-shadow:
       -2px -2px 1px #000,
       2px -2px 1px #000,
@@ -53,66 +51,66 @@ h1 /*Nagłówek*/
       0 0 10px #AFC8FF,
       0 0 18px #8CA0FF,
       0 0 28px #6E6BFF,
-      0 0 40px #5A3FE0;} /*Zmiana cienia dla tekstu.*/
+      0 0 40px #5A3FE0;} 
     
     h2
       {color: #2C1A73;
       font-size: 32px;
       margin: 20px 0;}
 
-    /*Linki główne.*/
+    
     body > div
-      {display: flex; /*Łatwiej się ustawia inne elementy, jak zależy od ich poszczególnych ustawień.*/
-      gap: 20px; /*Przerwa między elementami.*/
-      justify-content: center; /*Wyrównanie elementów do środka..*/
-      margin-top: 40px; /*Górny margines.*/
-      flex-wrap: wrap;} /*Dzięki temu można zawijać elementy.*/
+      {display: flex; 
+      gap: 20px; 
+      justify-content: center; 
+      margin-top: 40px; 
+      flex-wrap: wrap;} 
     body > div a
-      {text-decoration: none; /*Usuwa podkreślenia pod linkami.*/
-      color: #FFFFFF; /*Kolor tekstu linków.*/
-      background: #9c5fd8; /*Tło linków.*/
-      padding: 12px 24px; /*Marginesy.*/
-      border-radius: 10px; /*Zaokrągla rogi linków.*/
-      font-weight: bold; /*Pogrubia teksty linków.*/
+      {text-decoration: none; 
+      color: #FFFFFF; 
+      background: #9c5fd8; 
+      padding: 12px 24px;
+      border-radius: 10px; 
+      font-weight: bold; 
       font-size: 20px;
-      transition: all 0.4s ease; /*Sprawia, że animacje będą trwały płynnie i przez 0.4 sekundy, przyśpieszając i zwalniając.*/
-      display: inline-block;} /*Ustawia linki jako elementy blokowe w jednej linii*/
+      transition: all 0.4s ease; 
+      display: inline-block;} 
     body > div a:hover
-      {background-color: #874fb3; /*Zmienia tło przy najechaniu na link.*/
-      color: #FFFFFF; /*Zmienia koloru tekstu przy najechaniu na link.*/
-      transform: scale(1.10); /*Powiększa link przy najechaniu na niego.*/
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.2);} /*Cień przy najechaniu.*/
+      {background-color: #874fb3; 
+      color: #FFFFFF; 
+      transform: scale(1.10); 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.2);} 
 
-    p /*Paragrafy.*/
-      {color: #3A2B7A; /*Zmienia kolor tekstu paragrafów.*/
+    p 
+      {color: #3A2B7A; 
       margin: 10px 0;
       width: 100%;
       hyphens: auto;
       word-break: break-word;
-      font-size: 24px;} /*Zmienia rozmiar czcionki paragrafów.*/
+      font-size: 24px;} 
     
-    a /*Linki*/
-      {color: #6A4CA0; /*Zmienia kolor tekstu linków.*/
-      font-size: 25px; /*Zmienia rozmiar czcionki linków.*/
-      text-decoration: none;} /*Usuwa podkreślenia pod linkami.*/
+    a 
+      {color: #ede20e; 
+      font-size: 25px; 
+      text-decoration: none;} 
     a:hover
-      {color: #D4AF37; /*Zmienia kolor tekstu linków przy najechaniu na nie.*/
-      text-decoration: underline;} /*Podkreśla linki przy najechaniu na nie.*/
+      {color: #D4AF37; 
+      text-decoration: underline;} 
     
-    hr /*Linie oddzielające.*/
-      {height: 4px; /*Wysokość lini.*/
-      border: none; /*Usuwa domyślne ramki.*/
-      border-radius: 4px; /*Zaokrągla rogi linków.*/
-      background: linear-gradient(90deg, #6A4CA0, #8E54E9); /*Tło linii.*/
-      margin: 28px 0;} /*Margines wokół lini.*/
+    hr 
+      {height: 4px; 
+      border: none; 
+      border-radius: 4px; 
+      background: linear-gradient(90deg, #e6e874, #eff230); 
+      margin: 28px 0;} 
 
     @media only screen and (max-width: 768px) {
     body
-      {padding-bottom: 120px;} /*Robi więcej miejsca na pasek dolny.*/
+      {padding-bottom: 120px;}
     h1
-        {font-size: 28px;} /*Mniejszy rozmiar czcionki.*/
+        {font-size: 28px;} 
     h2
-        {font-size: 20px;} /*Mniejszy rozmiar czcionki.*/
+        {font-size: 20px;} 
     p
       {font-size: 16px;
       line-height: 1.4;}
@@ -122,7 +120,6 @@ h1 /*Nagłówek*/
   </style>
 </head>
 <body>
-  <!--Nagłówek.-->
   <h1>Robert Karaś</h1>
   <hr>
   <div>
@@ -131,5 +128,6 @@ h1 /*Nagłówek*/
   </div>
 </body>
 </html>
+
 
 
