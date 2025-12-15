@@ -67,8 +67,8 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 255px; /* 🔧 DOPASOWANE DO RINGU */
-    font-size: 32px;
+    transform-origin: 0 220px; /* 🔧 DOPASOWANE DO RINGU */
+    font-size: 24px;
     letter-spacing: 4px;
     background: linear-gradient(#fff, #e6e6e6);
     -webkit-background-clip: text;
@@ -137,7 +137,7 @@ body {
 <script>
 const text = "ROBERT KARAŚ • ROBERT KARAŚ • ";
 const circle = document.getElementById("circleText");
-const radius = 255;
+const radius = 220;
 
 text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
@@ -150,4 +150,5 @@ text.split("").forEach((char, i, arr) => {
 
 </body>
 </html>
+
 
