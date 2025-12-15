@@ -15,7 +15,31 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58); /* stały pastelowy żółty */
+      background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58);
+    }
+
+    .layout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px; /* odstęp między gifami a donutem */
+      width: 100%;
+      height: 100%;
+    }
+
+    .gif-placeholder {
+      width: 200px;
+      height: 200px;
+      background: rgba(0,0,0,0.1);
+      border: 3px dashed #9c5fd8;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
     .donut-container {
@@ -27,10 +51,9 @@
     .donut-svg {
       width: 100%;
       height: 100%;
-      animation: spin 25s linear infinite; /* tylko obracanie */
+      animation: spin 25s linear infinite; /* obracanie */
     }
 
-    /* Obręcz z gradientem fioletowym */
     .donut-svg circle {
       stroke: url(#gradCircle);
       stroke-width: 100;
@@ -38,12 +61,11 @@
       filter: drop-shadow(0 0 25px rgba(106,13,173,0.6));
     }
 
-    /* Tekst gradientowy biało-szary z obramówką */
     .donut-svg text {
       font-family: 'Anton', sans-serif;
-      font-size: 58px;   /* lekko zmniejszony */
+      font-size: 58px;
       fill: url(#gradText);
-      stroke: #000;       /* obramówka dla czytelności */
+      stroke: #000;
       stroke-width: 2px;
       text-shadow: 0 0 10px rgba(0,0,0,0.6);
       letter-spacing: 3px;
@@ -84,6 +106,14 @@
     }
 
     @media only screen and (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .gif-placeholder {
+        width: 150px;
+        height: 150px;
+      }
       .donut-svg text {
         font-size: 36px;
       }
@@ -93,7 +123,6 @@
       }
     }
 
-    /* Animacja obracania */
     @keyframes spin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -101,43 +130,46 @@
   </style>
 </head>
 <body>
-  <div class="donut-container">
-    <svg viewBox="0 0 600 600" class="donut-svg">
-      <!-- Gradienty -->
-      <defs>
-        <!-- Obręcz -->
-        <linearGradient id="gradCircle" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#9D4EDD"/>
-          <stop offset="50%" stop-color="#C77DFF"/>
-          <stop offset="100%" stop-color="#7B2CBF"/>
-        </linearGradient>
+  <div class="layout">
+    <!-- Placeholder na gif po lewej -->
+    <div class="gif-placeholder">GIF<br>LEWO</div>
 
-        <!-- Tekst -->
-        <linearGradient id="gradText" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#FFFFFF"/>
-          <stop offset="100%" stop-color="#B0BEC5"/>
-        </linearGradient>
-      </defs>
+    <!-- Donut -->
+    <div class="donut-container">
+      <svg viewBox="0 0 600 600" class="donut-svg">
+        <defs>
+          <linearGradient id="gradCircle" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#9D4EDD"/>
+            <stop offset="50%" stop-color="#C77DFF"/>
+            <stop offset="100%" stop-color="#7B2CBF"/>
+          </linearGradient>
+          <linearGradient id="gradText" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="100%" stop-color="#B0BEC5"/>
+          </linearGradient>
+        </defs>
 
-      <!-- Obręcz -->
-      <circle cx="300" cy="300" r="200" stroke="url(#gradCircle)" stroke-width="100" fill="none"/>
-      
-      <!-- Górny łuk dla tekstu -->
-      <path id="topArc" d="M120,250 A200,200 0 0,1 480,250" fill="none"/>
-      <text>
-        <textPath href="#topArc" startOffset="50%" text-anchor="middle">
-          Robert Karaś
-        </textPath>
-      </text>
-    </svg>
-    <div class="donut-center">
-      <a href="zad1.html">Zadanie 1</a>
-      <a href="zad2.html">Zadanie 2</a>
-      <a href="zad3.html">Zadanie 3</a>
+        <circle cx="300" cy="300" r="200" stroke="url(#gradCircle)" stroke-width="100" fill="none"/>
+        <path id="topArc" d="M120,250 A200,200 0 0,1 480,250" fill="none"/>
+        <text>
+          <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+            Robert Karaś
+          </textPath>
+        </text>
+      </svg>
+      <div class="donut-center">
+        <a href="zad1.html">Zadanie 1</a>
+        <a href="zad2.html">Zadanie 2</a>
+        <a href="zad3.html">Zadanie 3</a>
+      </div>
     </div>
+
+    <!-- Placeholder na gif po prawej -->
+    <div class="gif-placeholder">GIF<br>PRAWO</div>
   </div>
 </body>
 </html>
+
 
 
 
