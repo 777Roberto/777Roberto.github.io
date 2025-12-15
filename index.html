@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+HTML<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -11,7 +11,6 @@
 body {
     margin: 0;
     height: 100vh;
-    /* ciemniejszy żółty gradient pasujący do koloru wnętrza koła oraz gradientu obręczy */
     background: linear-gradient(135deg, #e6d880, #d4c66a);
     font-family: 'Anton', sans-serif;
     display: flex;
@@ -20,14 +19,12 @@ body {
     overflow: hidden;
 }
 
-/* WRAPPER */
 .logo-wrapper {
     position: relative;
     width: 700px;
     height: 700px;
 }
 
-/* RING – obracająca się obręcz */
 .ring {
     position: absolute;
     inset: 0;
@@ -37,7 +34,6 @@ body {
     box-shadow: 0 35px 70px rgba(0,0,0,0.35);
 }
 
-/* TEKST W OBRĘCZY */
 .text-ring {
     position: absolute;
     inset: 0;
@@ -48,7 +44,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 300px;
+    transform-origin: 0 345px;   /* zmienione – dopasowane do nowego radius */
     font-size: 38px;
     font-weight: 900;
     letter-spacing: 6px;
@@ -58,11 +54,10 @@ body {
     -webkit-text-stroke: 2px black;
 }
 
-/* ŚRODEK – nie obraca się */
 .inner-circle {
     position: absolute;
     inset: 180px;
-    background: #FFF19A; /* ten sam żółty co wcześniej, pasuje idealnie do tła */
+    background: #FFF19A;
     border-radius: 50%;
     z-index: 3;
     display: flex;
@@ -70,7 +65,6 @@ body {
     align-items: center;
 }
 
-/* PRZYCISKI */
 .center {
     display: flex;
     flex-direction: column;
@@ -102,12 +96,10 @@ body {
 <body>
 
 <div class="logo-wrapper">
-    <!-- Obracająca się obręcz z tekstem -->
     <div class="ring">
         <div class="text-ring" id="textRing"></div>
     </div>
 
-    <!-- Stały środek (nie obraca się) -->
     <div class="inner-circle">
         <div class="center">
             <a href="zad1.html">Zadanie 1</a>
@@ -120,7 +112,7 @@ body {
 <script>
 const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
 const ring = document.getElementById("textRing");
-const radius = 300; // dopasowane do transform-origin w CSS
+const radius = 345;   // zwiększone – teraz tekst leży dokładnie na środku obręczy
 
 text.split("").forEach((char, i) => {
     const span = document.createElement("span");
