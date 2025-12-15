@@ -1,5 +1,4 @@
-
-HTML<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -44,10 +43,10 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 345px;   /* zmienione – dopasowane do nowego radius */
-    font-size: 38px;
+    transform-origin: 0 355px;   /* zwiększone dla idealnego położenia na obręczy */
+    font-size: 46px;            /* trochę większa czcionka */
     font-weight: 900;
-    letter-spacing: 6px;
+    letter-spacing: 10px;       /* większe odstępy między literami */
     background: linear-gradient(#fff, #e6e6e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -110,14 +109,15 @@ body {
 </div>
 
 <script>
-const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
+const text = "ROBERT KARAŚ •";
 const ring = document.getElementById("textRing");
-const radius = 345;   // zwiększone – teraz tekst leży dokładnie na środku obręczy
+const radius = 355;               // idealnie na obręczy
+const startOffset = 90;           // lekkie przesunięcie startu napisu (w stopniach) – możesz zmienić na 0-360
 
 text.split("").forEach((char, i) => {
     const span = document.createElement("span");
     span.textContent = char;
-    const angle = i * (360 / text.length);
+    const angle = startOffset + i * (360 / text.length);
     span.style.transform = `rotate(${angle}deg) translateY(-${radius}px)`;
     ring.appendChild(span);
 });
@@ -125,6 +125,7 @@ text.split("").forEach((char, i) => {
 
 </body>
 </html>
+
 
 
 
