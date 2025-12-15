@@ -62,7 +62,7 @@ body {
     transform-origin: 0 400px; /* radius = połowa wrappera */
     font-size: 40px; /* GRUBY TEKST */
     font-weight: 900;
-    letter-spacing: 6px;
+    letter-spacing: 1px;
     background: linear-gradient(#fff, #e6e6e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -129,7 +129,7 @@ body {
 <script>
 const text = "ROBERT KARAŚ ";
 const ring = document.getElementById("textRing");
-const radius = 400; // połowa wrappera
+const radius = 100; // połowa wrappera
 
 text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
@@ -141,6 +141,7 @@ text.split("").forEach((char, i, arr) => {
 </script>
 
 </body>
+
 
 
 
