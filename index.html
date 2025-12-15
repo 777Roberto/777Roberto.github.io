@@ -16,35 +16,74 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 80px;
 }
 
-/* OBRACAJĄCE SIĘ KOŁO */
+/* PLACEHOLDERY NA GIF */
+.gif-box {
+    width: 200px;
+    height: 200px;
+    background: rgba(0,0,0,0.15);
+    border: 4px dashed #7B2CBF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5A189A;
+    font-size: 18px;
+}
+
+/* KOŁO */
+.logo-wrapper {
+    perspective: 1000px;
+}
+
 .logo {
-    width: 520px;
-    height: 520px;
-    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
+    width: 620px;
+    height: 620px;
     border-radius: 50%;
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: spin 20s linear infinite;
+    animation: spin 40s linear infinite;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    transform-style: preserve-3d;
 }
 
-/* WOLNY OBRÓT JAK KOŁO W AUCIE */
+/* OBRÓT */
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    from { transform: rotateZ(0deg); }
+    to   { transform: rotateZ(360deg); }
+}
+
+/* HOVER – PRZYSPIESZENIE + 3D */
+.logo-wrapper:hover .logo {
+    animation-duration: 10s;
+    box-shadow: 0 45px 90px rgba(0,0,0,0.5);
+    transform: rotateX(12deg) rotateZ(0deg);
+}
+
+/* CIEŃ OBRACAJĄCY SIĘ */
+.logo::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.35);
+    pointer-events: none;
 }
 
 /* ŚRODEK */
 .logo::before {
     content: "";
-    width: 330px;
-    height: 330px;
-    background: linear-gradient(135deg, #FFF3B0, #FFE066);
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
+    background: linear-gradient(135deg, #FFF3B0, #FFE066);
     position: absolute;
+    z-index: 1;
 }
 
 /* TEKST PO OKRĘGU */
@@ -58,31 +97,32 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 260px;
-    font-size: 32px;
-    background: linear-gradient(180deg, #ffffff, #e0e0e0);
+    transform-origin: 0 310px;
+    font-size: 36px;
+    letter-spacing: 4px;
+    background: linear-gradient(180deg, #ffffff, #e6e6e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px black;
-    letter-spacing: 3px;
 }
 
-/* ŚRODEK – PRZYCISKI (NIE OBRACAJĄ SIĘ) */
+/* ŚRODEK – NIE OBRACA SIĘ */
 .center {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
+    transform: translateZ(40px);
 }
 
 .center a {
     text-decoration: none;
     color: #FFFFFF;
     background: linear-gradient(135deg, #9c5fd8, #7B2CBF);
-    padding: 12px 26px;
-    border-radius: 12px;
-    font-size: 22px;
+    padding: 14px 30px;
+    border-radius: 14px;
+    font-size: 24px;
     text-align: center;
     transition: 0.3s;
     text-shadow:
@@ -93,38 +133,42 @@ body {
 }
 
 .center a:hover {
-    transform: scale(1.12);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+    transform: scale(1.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
 }
 </style>
 </head>
 
 <body>
 
-<div class="logo">
+<div class="gif-box">GIF LEFT</div>
 
-    <!-- TEKST PO OKRĘGU -->
-    <div class="circle-text" id="circleText"></div>
+<div class="logo-wrapper">
+    <div class="logo">
 
-    <!-- ŚRODEK -->
-    <div class="center">
-        <a href="zad1.html">Zadanie 1</a>
-        <a href="zad2.html">Zadanie 2</a>
-        <a href="zad3.html">Zadanie 3</a>
+        <div class="circle-text" id="circleText"></div>
+
+        <div class="center">
+            <a href="zad1.html">Zadanie 1</a>
+            <a href="zad2.html">Zadanie 2</a>
+            <a href="zad3.html">Zadanie 3</a>
+        </div>
+
     </div>
-
 </div>
 
-<script>
-const text = "ROBERT KARAŚ • ROBERT KARAŚ • ";
-const circle = document.getElementById("circleText");
-const radius = 260;
-const chars = text.split("");
+<div class="gif-box">GIF RIGHT</div>
 
-chars.forEach((char, i) => {
+<script>
+const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
+const circle = document.getElementById("circleText");
+const radius = 310;
+
+text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
     span.innerText = char;
-    span.style.transform = `rotate(${i * (360 / chars.length)}deg) translateY(-${radius}px)`;
+    span.style.transform =
+        `rotate(${i * (360 / arr.length)}deg) translateY(-${radius}px)`;
     circle.appendChild(span);
 });
 </script>
