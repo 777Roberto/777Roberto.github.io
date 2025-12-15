@@ -11,130 +11,103 @@
 body {
     margin: 0;
     height: 100vh;
+    background: #FFF19A;
     font-family: 'Anton', sans-serif;
-    background: linear-gradient(135deg, #FFE066, #FFF3B0);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 80px;
 }
 
-/* PLACEHOLDERY NA GIF */
+/* GIF PLACEHOLDERY */
 .gif-box {
     width: 200px;
     height: 200px;
-    background: rgba(0,0,0,0.15);
-    border: 4px dashed #7B2CBF;
+    border: 4px dashed #8e44ad;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #5A189A;
-    font-size: 18px;
+    justify-content: center;
+    color: #6A0DAD;
 }
 
-/* KOŁO */
+/* WRAPPER */
 .logo-wrapper {
-    perspective: 1000px;
-}
-
-.logo {
+    position: relative;
     width: 620px;
     height: 620px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: spin 40s linear infinite;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
-    transform-style: preserve-3d;
 }
 
-/* OBRÓT */
+/* OBRACAJĄCY SIĘ RING */
+.ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #9D4EDD, #6A0DAD);
+    animation: spin 60s linear infinite;
+    box-shadow: 0 40px 80px rgba(0,0,0,.35);
+}
+
 @keyframes spin {
-    from { transform: rotateZ(0deg); }
-    to   { transform: rotateZ(360deg); }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
-/* HOVER – PRZYSPIESZENIE + 3D */
-.logo-wrapper:hover .logo {
-    animation-duration: 10s;
-    box-shadow: 0 45px 90px rgba(0,0,0,0.5);
-    transform: rotateX(12deg) rotateZ(0deg);
+.logo-wrapper:hover .ring {
+    animation-duration: 12s;
 }
 
-/* CIEŃ OBRACAJĄCY SIĘ */
-.logo::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    box-shadow: inset 0 0 40px rgba(0,0,0,0.35);
-    pointer-events: none;
-}
-
-/* ŚRODEK */
-.logo::before {
-    content: "";
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #FFF3B0, #FFE066);
-    position: absolute;
-    z-index: 1;
-}
-
-/* TEKST PO OKRĘGU */
+/* TEKST NA RINGU */
 .circle-text {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    pointer-events: none;
 }
 
 .circle-text span {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 310px;
-    font-size: 36px;
+    transform-origin: 0 255px; /* 🔧 DOPASOWANE DO RINGU */
+    font-size: 32px;
     letter-spacing: 4px;
-    background: linear-gradient(180deg, #ffffff, #e6e6e6);
+    background: linear-gradient(#fff, #e6e6e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px black;
 }
 
-/* ŚRODEK – NIE OBRACA SIĘ */
+/* ŚRODEK – NIERUCHOMY */
+.inner-circle {
+    position: absolute;
+    inset: 120px;
+    background: #FFF19A;
+    border-radius: 50%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PRZYCISKI – NIGDY SIĘ NIE RUSZAJĄ */
 .center {
-    position: relative;
-    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 18px;
-    transform: translateZ(40px);
 }
 
 .center a {
-    text-decoration: none;
-    color: #FFFFFF;
     background: linear-gradient(135deg, #9c5fd8, #7B2CBF);
+    color: #fff;
     padding: 14px 30px;
     border-radius: 14px;
-    font-size: 24px;
+    text-decoration: none;
+    font-size: 22px;
     text-align: center;
-    transition: 0.3s;
-    text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+    box-shadow: 0 6px 18px rgba(0,0,0,.3);
 }
 
 .center a:hover {
-    transform: scale(1.15);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+    transform: scale(1.1);
 }
 </style>
 </head>
@@ -144,25 +117,27 @@ body {
 <div class="gif-box">GIF LEFT</div>
 
 <div class="logo-wrapper">
-    <div class="logo">
 
+    <div class="ring">
         <div class="circle-text" id="circleText"></div>
+    </div>
 
+    <div class="inner-circle">
         <div class="center">
             <a href="zad1.html">Zadanie 1</a>
             <a href="zad2.html">Zadanie 2</a>
             <a href="zad3.html">Zadanie 3</a>
         </div>
-
     </div>
+
 </div>
 
 <div class="gif-box">GIF RIGHT</div>
 
 <script>
-const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
+const text = "ROBERT KARAŚ • ROBERT KARAŚ • ";
 const circle = document.getElementById("circleText");
-const radius = 310;
+const radius = 255;
 
 text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
@@ -175,3 +150,4 @@ text.split("").forEach((char, i, arr) => {
 
 </body>
 </html>
+
