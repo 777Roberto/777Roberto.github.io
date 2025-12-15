@@ -42,43 +42,32 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: conic-gradient(#7B2CBF 0% 50%, #9D4EDD 50% 100%);
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD); /* wraca normalny gradient */
     animation: spin 40s linear infinite;
     box-shadow: 0 35px 70px rgba(0,0,0,0.35);
-    border: 40px solid transparent; /* grubsza obręcz */
+    border: 40px solid transparent; /* grubość obręczy */
 }
 
-.logo-wrapper:hover .ring {
-    animation-duration: 12s;
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
-/* === TEKST === */
 .text-ring {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    animation: spin 40s linear infinite; /* tekst obraca się razem z kołem */
+    animation: spin 40s linear infinite; /* obraca się razem z ringiem */
 }
 
 .text-ring span {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 400px; /* radius = połowa 800 */
-    font-size: 32px;
-    letter-spacing: 4px;
-    font-weight: bold;
+    transform-origin: 0 400px; /* radius = połowa wrappera */
+    font-size: 40px; /* GRUBY TEKST */
+    font-weight: 900;
+    letter-spacing: 6px;
     background: linear-gradient(#fff, #e6e6e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px black;
 }
-
 /* ŚRODEK */
 .inner-circle {
     position: absolute;
@@ -138,9 +127,9 @@ body {
 <div class="gif-box">GIF RIGHT</div>
 
 <script>
-const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
+const text = "ROBERT KARAŚ ";
 const ring = document.getElementById("textRing");
-const radius = 400; // połowa 800px
+const radius = 400; // połowa wrappera
 
 text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
@@ -152,6 +141,7 @@ text.split("").forEach((char, i, arr) => {
 </script>
 
 </body>
+
 
 
 
