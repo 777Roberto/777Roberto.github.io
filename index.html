@@ -2,126 +2,121 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Robert Karaś</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prezentacja Programu w C++</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-
 body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #e6d880, #d4c66a);
-    font-family: 'Anton', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    font-family: 'Anton', sans-serif; 
+    background: linear-gradient(135deg, #FFE066, #FFF3B0); 
+    padding: 24px; 
+    padding-bottom: 140px; 
+    line-height: 1.6; 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center center;
 }
 
-.logo-wrapper {
-    position: relative;
-    width: 700px;
-    height: 700px;
+.grafika-programu {
+    float: left;
+    width: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
-.ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
-    animation: spin 40s linear infinite;
-    box-shadow: 0 35px 70px rgba(0,0,0,0.35);
+section {
+    margin-top: 50px;
 }
 
-.text-ring {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-.text-ring span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform-origin: 0 355px;   /* zwiększone dla idealnego położenia na obręczy */
-    font-size: 46px;            /* trochę większa czcionka */
-    font-weight: 900;
-    letter-spacing: 10px;       /* większe odstępy między literami */
-    background: linear-gradient(#fff, #e6e6e6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px black;
-}
-
-.inner-circle {
-    position: absolute;
-    inset: 180px;
-    background: #FFF19A;
-    border-radius: 50%;
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.center {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.center a {
-    background: linear-gradient(135deg, #9c5fd8, #7B2CBF);
-    color: white;
-    padding: 16px 36px;
-    border-radius: 16px;
-    text-decoration: none;
-    font-size: 24px;
-    text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,.35);
-    transition: transform 0.3s;
-}
-
-.center a:hover {
-    transform: scale(1.1);
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+h1, h2 {
+    color: #333;
 }
 </style>
 </head>
+
 <body>
 
-<div class="logo-wrapper">
-    <div class="ring">
-        <div class="text-ring" id="textRing"></div>
-    </div>
+<h1>Prezentacja Programu w C++</h1>
 
-    <div class="inner-circle">
-        <div class="center">
-            <a href="zad1.html">Zadanie 1</a>
-            <a href="zad2.html">Zadanie 2</a>
-            <a href="zad3.html">Zadanie 3</a>
-        </div>
-    </div>
+<img src=".png" alt="Zrzut ekranu programu" class="grafika-programu">
+
+<p>
+bla bla bla
+<br><br>
+</p>
+
+<div style="clear: both;"></div>
+
+<section>
+<h2>Materiał audio – moje omówienie zagadnienia</h2>
+
+<p>
+Poniżej znajduje się nagranie głosowe, w którym omawiam działanie mojego programu,
+wyjaśniam zastosowane elementy oraz sposób działania aplikacji.
+</p>
+
+<audio controls>
+    <source src=".mp4" type="audio/mpeg">
+    Twoja przeglądarka nie obsługuje odtwarzania audio.
+</audio>
+</section>
+
+<section>
+<h2>Film instruktażowy – wykonanie zadania</h2>
+
+<p>
+Poniższy film prezentuje proces wykonania wybranego zadania związanego z tematem projektu.
+Materiał pokazuje wszystkie etapy działania programu.
+</p>
+
+<video width="640" controls>
+    <source src=".mp4" type="video/mp4">
+    Twoja przeglądarka nie obsługuje odtwarzania wideo.
+</video>
+</section>
+
+<section>
+<h2>Materiały pomocnicze</h2>
+
+<p>
+Poniżej znajdują się linki do stron, z których korzystałem podczas przygotowywania zadania:
+</p>
+
+<ul>
+    <li>
+        <a href="https://www.algorytm.edu.pl/algorytmy-maturalne/algorytm-eulkidesa.html" target="_blank">
+            Link do materiałów
+        </a>
+    </li>
+</ul>
+</section>
+
+<div style="
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #E6CCFF, #CFA8FF, #A77BFF, #6A0DAD);
+    padding: 15px 20px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+    z-index: 1000; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;">
+    
+    <a href="index.html" style="
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #590a8a;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 20px;">
+    Powrót do strony głównej
+</a>
 </div>
-
-<script>
-const text = "ROBERT KARAŚ •";
-const ring = document.getElementById("textRing");
-const radius = 355;               // idealnie na obręczy
-const startOffset = 90;           // lekkie przesunięcie startu napisu (w stopniach) – możesz zmienić na 0-360
-
-text.split("").forEach((char, i) => {
-    const span = document.createElement("span");
-    span.textContent = char;
-    const angle = startOffset + i * (360 / text.length);
-    span.style.transform = `rotate(${angle}deg) translateY(-${radius}px)`;
-    ring.appendChild(span);
-});
-</script>
 
 </body>
 </html>
