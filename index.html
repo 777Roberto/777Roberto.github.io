@@ -2,8 +2,8 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Robert Karaś</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -19,32 +19,36 @@ body {
     gap: 80px;
 }
 
-/* GIF PLACEHOLDERY */
+/* PLACEHOLDERY */
 .gif-box {
     width: 200px;
     height: 200px;
     border: 4px dashed #8e44ad;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     color: #6A0DAD;
 }
 
 /* WRAPPER */
 .logo-wrapper {
     position: relative;
-    width: 620px;
-    height: 620px;
+    width: 600px;
+    height: 600px;
 }
 
-/* OBRACAJĄCY SIĘ RING */
+/* RING */
 .ring {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #9D4EDD, #6A0DAD);
-    animation: spin 60s linear infinite;
-    box-shadow: 0 40px 80px rgba(0,0,0,.35);
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
+    animation: spin 50s linear infinite;
+    box-shadow: 0 35px 70px rgba(0,0,0,0.35);
+}
+
+.logo-wrapper:hover .ring {
+    animation-duration: 12s;
 }
 
 @keyframes spin {
@@ -52,23 +56,19 @@ body {
     to   { transform: rotate(360deg); }
 }
 
-.logo-wrapper:hover .ring {
-    animation-duration: 12s;
-}
-
-/* TEKST NA RINGU */
-.circle-text {
+/* === TEKST – TEN SAM OKRĄG === */
+.text-ring {
     position: absolute;
-    inset: 0;
+    inset: 0;                 /* 🔑 IDENTYCZNY ROZMIAR */
     pointer-events: none;
 }
 
-.circle-text span {
+.text-ring span {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 220px; /* 🔧 DOPASOWANE DO RINGU */
-    font-size: 24px;
+    transform-origin: 0 300px; /* 🔑 RADIUS = 600 / 2 */
+    font-size: 26px;
     letter-spacing: 4px;
     background: linear-gradient(#fff, #e6e6e6);
     -webkit-background-clip: text;
@@ -76,10 +76,10 @@ body {
     -webkit-text-stroke: 2px black;
 }
 
-/* ŚRODEK – NIERUCHOMY */
+/* ŚRODEK */
 .inner-circle {
     position: absolute;
-    inset: 120px;
+    inset: 150px;
     background: #FFF19A;
     border-radius: 50%;
     z-index: 3;
@@ -88,7 +88,7 @@ body {
     align-items: center;
 }
 
-/* PRZYCISKI – NIGDY SIĘ NIE RUSZAJĄ */
+/* PRZYCISKI */
 .center {
     display: flex;
     flex-direction: column;
@@ -97,7 +97,7 @@ body {
 
 .center a {
     background: linear-gradient(135deg, #9c5fd8, #7B2CBF);
-    color: #fff;
+    color: white;
     padding: 14px 30px;
     border-radius: 14px;
     text-decoration: none;
@@ -118,9 +118,9 @@ body {
 
 <div class="logo-wrapper">
 
-    <div class="ring">
-        <div class="circle-text" id="circleText"></div>
-    </div>
+    <div class="ring"></div>
+
+    <div class="text-ring" id="textRing"></div>
 
     <div class="inner-circle">
         <div class="center">
@@ -135,20 +135,21 @@ body {
 <div class="gif-box">GIF RIGHT</div>
 
 <script>
-const text = "ROBERT KARAŚ • ROBERT KARAŚ • ";
-const circle = document.getElementById("circleText");
-const radius = 220;
+const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
+const ring = document.getElementById("textRing");
+const radius = 300; // 🔑 TEN SAM CO POŁOWA KOŁA
 
 text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
-    span.innerText = char;
+    span.textContent = char;
     span.style.transform =
         `rotate(${i * (360 / arr.length)}deg) translateY(-${radius}px)`;
-    circle.appendChild(span);
+    ring.appendChild(span);
 });
 </script>
 
 </body>
 </html>
+
 
 
