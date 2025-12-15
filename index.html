@@ -11,7 +11,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: #FFF19A; /* żółte tło */
+    background: #FFF19A;
     font-family: 'Anton', sans-serif;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ body {
 /* WRAPPER */
 .logo-wrapper {
     position: relative;
-    width: 700px;   /* większe koło */
+    width: 700px;
     height: 700px;
 }
 
@@ -42,14 +42,10 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7B2CBF, #9D4EDD); /* fioletowy gradient */
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
     animation: spin 40s linear infinite;
     box-shadow: 0 35px 70px rgba(0,0,0,0.35);
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    overflow: hidden;
 }
 
 /* TEKST W OBRĘCZY */
@@ -57,14 +53,13 @@ body {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    animation: spin 40s linear infinite; /* obraca się razem z kołem */
 }
 
 .text-ring span {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 350px; /* połowa wrappera */
+    transform-origin: 0 300px;
     font-size: 36px;
     font-weight: 900;
     letter-spacing: 6px;
@@ -77,7 +72,7 @@ body {
 /* ŚRODEK */
 .inner-circle {
     position: absolute;
-    inset: 180px; /* proporcjonalny środek */
+    inset: 180px;
     background: #FFF19A;
     border-radius: 50%;
     z-index: 3;
@@ -86,7 +81,7 @@ body {
     align-items: center;
 }
 
-/* PRZYCISKI – NIE TYKAM */
+/* PRZYCISKI */
 .center {
     display: flex;
     flex-direction: column;
@@ -107,6 +102,11 @@ body {
 .center a:hover {
     transform: scale(1.1);
 }
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
 </style>
 </head>
 
@@ -116,9 +116,9 @@ body {
 
 <div class="logo-wrapper">
 
-    <div class="ring"></div>
-
-    <div class="text-ring" id="textRing"></div>
+    <div class="ring">
+        <div class="text-ring" id="textRing"></div>
+    </div>
 
     <div class="inner-circle">
         <div class="center">
@@ -135,7 +135,7 @@ body {
 <script>
 const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
 const ring = document.getElementById("textRing");
-const radius = 350; // połowa wrappera
+const radius = 300;
 
 text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
@@ -147,8 +147,6 @@ text.split("").forEach((char, i, arr) => {
 </script>
 
 </body>
-</html>
-
 
 
 
