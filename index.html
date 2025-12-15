@@ -1,150 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-  <meta charset="utf-8">   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-  <title>Robert karaś</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robert Karaś</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    
-  body 
-    {font-family: 'Anton', sans-serif; 
-    background: linear-gradient(135deg, #FFE066, #FFF3B0); 
-    padding: 24px; 
-    line-height: 1.6; 
-    background-size: cover; 
-    background-attachment: fixed; 
-    background-position: center center;} 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
-h1 
-      {font-family: 'Anton', sans-serif; 
-      font-size: 42px; 
-      color: #FFFFFF; 
-      text-align: center; 
-      padding: 20px 0; 
-      border-radius: 0; 
-      box-shadow: inset 0 -6px 12px rgba(255, 255, 255, 0.25), 0 6px 20px rgba(0,0,0,0.3);
-      text-shadow: -2px -2px 1px #000, 2px -2px 1px #000, -2px  2px 1px #000, 2px  2px 1px #000, 0 0 4px #000;
-      transition: all 0.4s ease; 
-      background: linear-gradient(270deg, #6A0DAD, #7B2CBF, #9D4EDD, #B185DB, #7B2CBF, #6A0DAD); 
-      background-size: 600% 600%;
-      animation: gradientMove 25s ease infinite; 
-      display: block; 
-      width: 100%;} 
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Anton', sans-serif;
+    background: linear-gradient(135deg, #FFE066, #FFF3B0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-      @keyframes gradientMove { 
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }}
-
-     
-    h1:hover 
-      {box-shadow: 0 12px 30px rgba(0,0,0,0.3); 
-      background: linear-gradient(270deg, #7B2CBF, #9D4EDD, #B185DB, #CDB4DB, #9D4EDD, #7B2CBF); 
-      background-size: 600% 600%; 
-      color: #E0FFFF; 
-      text-shadow:
-      -2px -2px 1px #000,
-      2px -2px 1px #000,
-      -2px  2px 1px #000,
-      2px  2px 1px #000,
-      0 0 4px #000,
-      0 0 10px #C77DFF,
-      0 0 18px #9D4EDD,
-      0 0 28px #7B2CBF,
-      0 0 40px #5A189A;} 
-    
-    h2
-      {color: #2C1A73;
-      font-size: 32px;
-      margin: 20px 0;}
-
-    
-    body > div
-      {display: flex; 
-      gap: 20px; 
-      justify-content: center; 
-      margin-top: 40px; 
-      flex-wrap: wrap;} 
-    body > div a
-{
-    text-decoration: none; 
-    color: #FFFFFF; 
-    background: #9c5fd8; 
-    padding: 12px 24px;
-    border-radius: 10px; 
-    font-weight: bold; 
-    font-size: 20px;
-    transition: all 0.4s ease; 
-    display: inline-block;
-
+/* NAGŁÓWEK */
+h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+    color: #FFFFFF;
+    padding: 20px 0;
+    margin: 0;
+    background: linear-gradient(270deg, #6A0DAD, #7B2CBF, #9D4EDD, #B185DB);
+    background-size: 600% 600%;
+    animation: gradientMove 20s ease infinite;
     text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-} 
+        -2px -2px 1px #000,
+         2px -2px 1px #000,
+        -2px  2px 1px #000,
+         2px  2px 1px #000;
+}
 
-body > div a:hover
-{
-    background-color: #874fb3; 
-    color: #FFFFFF; 
-    transform: scale(1.10); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.2);
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
+/* LOGO */
+.logo {
+    margin: 50px 0;
+    width: 420px;
+    height: 420px;
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ŚRODEK */
+.logo::before {
+    content: "";
+    width: 270px;
+    height: 270px;
+    background: linear-gradient(135deg, #FFF3B0, #FFE066);
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* TEKST GÓRA */
+.logo .top {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: #000;
+}
+
+/* TEKST DÓŁ */
+.logo .bottom {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    color: #000;
+}
+
+/* PROSTOKĄTY */
+.center {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 65px);
+    grid-template-rows: repeat(2, 45px);
+    gap: 25px;
+    z-index: 1;
+}
+
+.center div {
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
+    border: 4px solid black;
+}
+
+/* LINKI */
+.links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #9c5fd8, #7B2CBF);
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: 0.3s;
     text-shadow:
         -1px -1px 0 #000,
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000;
 }
-    p 
-      {color: #3A2B7A; 
-      margin: 10px 0;
-      width: 100%;
-      hyphens: auto;
-      word-break: break-word;
-      font-size: 24px;} 
-    
-    a 
-      {color: #ede20e; 
-      font-size: 25px; 
-      text-decoration: none;} 
-    a:hover
-      {color: #D4AF37; 
-      text-decoration: underline;} 
-    
-    hr 
-      {height: 4px; 
-      border: none; 
-      border-radius: 4px; 
-      background: linear-gradient(90deg, #2d065c, #773cbd); 
-      margin: 28px 0;} 
 
-    @media only screen and (max-width: 768px) {
-    body
-      {padding-bottom: 120px;}
-    h1
-        {font-size: 28px;} 
-    h2
-        {font-size: 20px;} 
-    p
-      {font-size: 16px;
-      line-height: 1.4;}
-     a
-      {font-size: 18px;}}
-    
-  </style>
+.links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+</style>
 </head>
+
 <body>
-  <h1>Robert Karaś</h1>
-  <hr>
-  <div>
-  <b><a href="zad1.html">Zadanie 1</a></b>
-  <b><a href="zad2.html">Zadanie 2</a></b>
-  <b><a href="zad3.html">Zadanie 3</a></b>
-  </div>
+
+<h1>Robert Karaś</h1>
+
+<div class="logo">
+    <div class="top">ROBERT KARAŚ</div>
+
+    <div class="center">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="bottom">3F</div>
+</div>
+
+<div class="links">
+    <a href="zad1.html">Zadanie 1</a>
+    <a href="zad2.html">Zadanie 2</a>
+    <a href="zad3.html">Zadanie 3</a>
+</div>
+
 </body>
 </html>
 
