@@ -11,18 +11,17 @@
     body {
       font-family: 'Anton', sans-serif; 
       background: linear-gradient(135deg, #FFE066, #FFF3B0); 
-      padding: 24px; 
-      line-height: 1.6; 
-      background-size: cover; 
-      background-attachment: fixed; 
-      background-position: center center;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .donut-container {
       position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 40px auto;
+      width: 90vmin;   /* zajmuje prawie całą stronę */
+      height: 90vmin;
     }
 
     .donut-svg {
@@ -33,16 +32,16 @@
 
     .donut-svg circle {
       stroke: #6A0DAD;   /* fioletowa obręcz */
-      stroke-width: 40;  /* grubość obręczy */
+      stroke-width: 60;  /* grubość obręczy */
       fill: none;
     }
 
     .donut-svg text {
       font-family: 'Anton', sans-serif;
-      font-size: 18px;
+      font-size: 32px;
       fill: #FFFFFF;     /* biały tekst */
-      text-shadow: 0 0 4px #000; /* lekki cień dla kontrastu */
-      letter-spacing: 3px;
+      text-shadow: 0 0 6px #000; /* lekki cień dla kontrastu */
+      letter-spacing: 2px;
     }
 
     .donut-center {
@@ -52,16 +51,16 @@
       transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 20px;
       align-items: center;
     }
 
     .donut-center a {
       background: #9c5fd8;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 18px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 22px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s;
@@ -78,39 +77,27 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.2);
     }
 
-    hr {
-      height: 4px; 
-      border: none; 
-      border-radius: 4px; 
-      background: linear-gradient(90deg, #2d065c, #773cbd); 
-      margin: 28px 0;
-    }
-
     @media only screen and (max-width: 768px) {
-      .donut-container {
-        width: 220px;
-        height: 220px;
-      }
       .donut-svg text {
-        font-size: 14px;
+        font-size: 20px;
       }
       .donut-center a {
-        font-size: 16px;
-        padding: 8px 16px;
+        font-size: 18px;
+        padding: 10px 20px;
       }
     }
   </style>
 </head>
 <body>
   <div class="donut-container">
-    <svg viewBox="0 0 300 300" class="donut-svg">
+    <svg viewBox="0 0 600 600" class="donut-svg">
       <!-- fioletowa obręcz -->
-      <circle cx="150" cy="150" r="100" stroke="#6A0DAD" stroke-width="40" fill="none"/>
-      <!-- ścieżka dla tekstu -->
-      <path id="circlePath" d="M150,150 m-100,0 a100,100 0 1,1 200,0 a100,100 0 1,1 -200,0" fill="none"/>
+      <circle cx="300" cy="300" r="200" stroke="#6A0DAD" stroke-width="60" fill="none"/>
+      <!-- ścieżka dla tekstu (tylko górny łuk) -->
+      <path id="topArc" d="M100,300 A200,200 0 0,1 500,300" fill="none"/>
       <text>
-        <textPath href="#circlePath" startOffset="0%">
-          Robert Karaś • Robert Karaś • Robert Karaś •
+        <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+          Robert Karaś
         </textPath>
       </text>
     </svg>
@@ -122,6 +109,8 @@
   </div>
 </body>
 </html>
+
+
 
 
 
