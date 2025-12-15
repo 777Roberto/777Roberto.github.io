@@ -16,7 +16,7 @@
       justify-content: center;
       align-items: center;
       background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58);
-      animation: bgPulse 8s ease-in-out infinite alternate;
+      animation: bgPulse 12s ease-in-out infinite;
     }
 
     .donut-container {
@@ -37,19 +37,19 @@
       stroke-width: 100;
       fill: none;
       filter: drop-shadow(0 0 25px rgba(106,13,173,0.6));
-      animation: circlePulse 6s ease-in-out infinite alternate;
+      animation: circlePulse 14s ease-in-out infinite;
     }
 
     /* Tekst gradientowy biało-szary */
     .donut-svg text {
       font-family: 'Anton', sans-serif;
-      font-size: 60px;   /* lekko zmniejszony */
+      font-size: 58px;   /* lekko zmniejszony */
       fill: url(#gradText);
       stroke: #000;       /* obramówka dla czytelności */
       stroke-width: 2px;
-      text-shadow: 0 0 10px rgba(0,0,0,0.7);
+      text-shadow: 0 0 10px rgba(0,0,0,0.6);
       letter-spacing: 3px;
-      animation: textPulse 6s ease-in-out infinite alternate;
+      animation: textPulse 10s ease-in-out infinite;
     }
 
     .donut-center {
@@ -104,17 +104,20 @@
 
     @keyframes bgPulse {
       0% { background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58); }
-      100% { background: linear-gradient(135deg, #FFF59D, #FFE082, #FFF176); }
+      50% { background: linear-gradient(135deg, #FFF59D, #FFE082, #FFF176); }
+      100% { background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58); }
     }
 
     @keyframes circlePulse {
       0% { stroke: url(#gradCircle); }
-      100% { stroke: url(#gradCircleAlt); }
+      50% { stroke: url(#gradCircleAlt); }
+      100% { stroke: url(#gradCircle); }
     }
 
     @keyframes textPulse {
       0% { fill: url(#gradText); }
-      100% { fill: url(#gradTextAlt); }
+      50% { fill: url(#gradTextAlt); }
+      100% { fill: url(#gradText); }
     }
   </style>
 </head>
@@ -165,6 +168,8 @@
   </div>
 </body>
 </html>
+
+
 
 
 
