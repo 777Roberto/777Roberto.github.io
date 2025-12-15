@@ -11,7 +11,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background: #FFF19A;
+    background: #FFF19A; /* żółte tło */
     font-family: 'Anton', sans-serif;
     display: flex;
     justify-content: center;
@@ -33,8 +33,8 @@ body {
 /* WRAPPER */
 .logo-wrapper {
     position: relative;
-    width: 800px;   /* większe koło */
-    height: 800px;
+    width: 700px;   /* większe koło */
+    height: 700px;
 }
 
 /* RING */
@@ -42,36 +42,42 @@ body {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: linear-gradient(135deg, #7B2CBF, #9D4EDD); /* wraca normalny gradient */
+    background: linear-gradient(135deg, #7B2CBF, #9D4EDD); /* fioletowy gradient */
     animation: spin 40s linear infinite;
     box-shadow: 0 35px 70px rgba(0,0,0,0.35);
-    border: 40px solid transparent; /* grubość obręczy */
 }
 
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* TEKST W OBRĘCZY */
 .text-ring {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    animation: spin 40s linear infinite; /* obraca się razem z ringiem */
+    animation: spin 40s linear infinite; /* obraca się razem z kołem */
 }
 
 .text-ring span {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform-origin: 0 400px; /* radius = połowa wrappera */
-    font-size: 40px; /* GRUBY TEKST */
+    transform-origin: 0 350px; /* połowa wrappera */
+    font-size: 36px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 6px;
     background: linear-gradient(#fff, #e6e6e6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px black;
 }
+
 /* ŚRODEK */
 .inner-circle {
     position: absolute;
-    inset: 200px; /* większy środek proporcjonalnie */
+    inset: 180px; /* proporcjonalny środek */
     background: #FFF19A;
     border-radius: 50%;
     z-index: 3;
@@ -80,7 +86,7 @@ body {
     align-items: center;
 }
 
-/* PRZYCISKI */
+/* PRZYCISKI – NIE TYKAM */
 .center {
     display: flex;
     flex-direction: column;
@@ -127,9 +133,9 @@ body {
 <div class="gif-box">GIF RIGHT</div>
 
 <script>
-const text = "ROBERT KARAŚ ";
+const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
 const ring = document.getElementById("textRing");
-const radius = 100; // połowa wrappera
+const radius = 350; // połowa wrappera
 
 text.split("").forEach((char, i, arr) => {
     const span = document.createElement("span");
@@ -141,6 +147,8 @@ text.split("").forEach((char, i, arr) => {
 </script>
 
 </body>
+</html>
+
 
 
 
