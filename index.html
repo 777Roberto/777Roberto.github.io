@@ -1,33 +1,25 @@
+
+HTML
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
 <title>Robert Karaś</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
     margin: 0;
     height: 100vh;
-    background: #FFF19A;
+    /* ciemniejszy żółty gradient pasujący do koloru wnętrza koła oraz gradientu obręczy */
+    background: linear-gradient(135deg, #e6d880, #d4c66a);
     font-family: 'Anton', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 80px;
-}
-
-/* PLACEHOLDERY */
-.gif-box {
-    width: 200px;
-    height: 200px;
-    border: 4px dashed #8e44ad;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #6A0DAD;
+    overflow: hidden;
 }
 
 /* WRAPPER */
@@ -37,7 +29,7 @@ body {
     height: 700px;
 }
 
-/* RING */
+/* RING – obracająca się obręcz */
 .ring {
     position: absolute;
     inset: 0;
@@ -45,7 +37,6 @@ body {
     background: linear-gradient(135deg, #7B2CBF, #9D4EDD);
     animation: spin 40s linear infinite;
     box-shadow: 0 35px 70px rgba(0,0,0,0.35);
-    overflow: hidden;
 }
 
 /* TEKST W OBRĘCZY */
@@ -60,7 +51,7 @@ body {
     left: 50%;
     top: 50%;
     transform-origin: 0 300px;
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 900;
     letter-spacing: 6px;
     background: linear-gradient(#fff, #e6e6e6);
@@ -69,11 +60,11 @@ body {
     -webkit-text-stroke: 2px black;
 }
 
-/* ŚRODEK */
+/* ŚRODEK – nie obraca się */
 .inner-circle {
     position: absolute;
     inset: 180px;
-    background: #FFF19A;
+    background: #FFF19A; /* ten sam żółty co wcześniej, pasuje idealnie do tła */
     border-radius: 50%;
     z-index: 3;
     display: flex;
@@ -85,18 +76,19 @@ body {
 .center {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
 }
 
 .center a {
     background: linear-gradient(135deg, #9c5fd8, #7B2CBF);
     color: white;
-    padding: 14px 30px;
-    border-radius: 14px;
+    padding: 16px 36px;
+    border-radius: 16px;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 24px;
     text-align: center;
-    box-shadow: 0 6px 18px rgba(0,0,0,.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+    transition: transform 0.3s;
 }
 
 .center a:hover {
@@ -105,48 +97,45 @@ body {
 
 @keyframes spin {
     from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+    to { transform: rotate(360deg); }
 }
 </style>
 </head>
-
 <body>
 
-<div class="gif-box">GIF LEFT</div>
-
 <div class="logo-wrapper">
-
+    <!-- Obracająca się obręcz z tekstem -->
     <div class="ring">
         <div class="text-ring" id="textRing"></div>
     </div>
 
+    <!-- Stały środek (nie obraca się) -->
     <div class="inner-circle">
         <div class="center">
-            <a href="zad1.html">Zadanie 1</a>
-            <a href="zad2.html">Zadanie 2</a>
-            <a href="zad3.html">Zadanie 3</a>
+            <a href="#">ZMIANY</a>
+            <a href="#">Ltd</a>
+            <a href="#">3F</a>
+            <!-- możesz zmienić href na właściwe linki -->
         </div>
     </div>
-
 </div>
-
-<div class="gif-box">GIF RIGHT</div>
 
 <script>
 const text = "ROBERT KARAŚ • ROBERT KARAŚ • ROBERT KARAŚ • ";
 const ring = document.getElementById("textRing");
-const radius = 300;
+const radius = 300; // dopasowane do transform-origin w CSS
 
-text.split("").forEach((char, i, arr) => {
+text.split("").forEach((char, i) => {
     const span = document.createElement("span");
     span.textContent = char;
-    span.style.transform =
-        `rotate(${i * (360 / arr.length)}deg) translateY(-${radius}px)`;
+    const angle = i * (360 / text.length);
+    span.style.transform = `rotate(${angle}deg) translateY(-${radius}px)`;
     ring.appendChild(span);
 });
 </script>
 
 </body>
+</html>
 
 
 
