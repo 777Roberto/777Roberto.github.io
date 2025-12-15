@@ -15,8 +15,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58);
-      animation: bgPulse 12s ease-in-out infinite;
+      background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58); /* stały pastelowy żółty */
     }
 
     .donut-container {
@@ -28,19 +27,18 @@
     .donut-svg {
       width: 100%;
       height: 100%;
-      animation: spin 25s linear infinite; /* obracanie */
+      animation: spin 25s linear infinite; /* tylko obracanie */
     }
 
-    /* Obręcz z gradientem fioletowym pulsującym */
+    /* Obręcz z gradientem fioletowym */
     .donut-svg circle {
       stroke: url(#gradCircle);
       stroke-width: 100;
       fill: none;
       filter: drop-shadow(0 0 25px rgba(106,13,173,0.6));
-      animation: circlePulse 14s ease-in-out infinite;
     }
 
-    /* Tekst gradientowy biało-szary */
+    /* Tekst gradientowy biało-szary z obramówką */
     .donut-svg text {
       font-family: 'Anton', sans-serif;
       font-size: 58px;   /* lekko zmniejszony */
@@ -49,7 +47,6 @@
       stroke-width: 2px;
       text-shadow: 0 0 10px rgba(0,0,0,0.6);
       letter-spacing: 3px;
-      animation: textPulse 10s ease-in-out infinite;
     }
 
     .donut-center {
@@ -96,28 +93,10 @@
       }
     }
 
-    /* Animacje */
+    /* Animacja obracania */
     @keyframes spin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
-    }
-
-    @keyframes bgPulse {
-      0% { background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58); }
-      50% { background: linear-gradient(135deg, #FFF59D, #FFE082, #FFF176); }
-      100% { background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58); }
-    }
-
-    @keyframes circlePulse {
-      0% { stroke: url(#gradCircle); }
-      50% { stroke: url(#gradCircleAlt); }
-      100% { stroke: url(#gradCircle); }
-    }
-
-    @keyframes textPulse {
-      0% { fill: url(#gradText); }
-      50% { fill: url(#gradTextAlt); }
-      100% { fill: url(#gradText); }
     }
   </style>
 </head>
@@ -132,20 +111,11 @@
           <stop offset="50%" stop-color="#C77DFF"/>
           <stop offset="100%" stop-color="#7B2CBF"/>
         </linearGradient>
-        <linearGradient id="gradCircleAlt" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#B185DB"/>
-          <stop offset="50%" stop-color="#9D4EDD"/>
-          <stop offset="100%" stop-color="#C77DFF"/>
-        </linearGradient>
 
         <!-- Tekst -->
         <linearGradient id="gradText" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stop-color="#FFFFFF"/>
           <stop offset="100%" stop-color="#B0BEC5"/>
-        </linearGradient>
-        <linearGradient id="gradTextAlt" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#ECEFF1"/>
-          <stop offset="100%" stop-color="#FFFFFF"/>
         </linearGradient>
       </defs>
 
@@ -168,6 +138,7 @@
   </div>
 </body>
 </html>
+
 
 
 
