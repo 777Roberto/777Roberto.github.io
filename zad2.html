@@ -6,193 +6,174 @@
 
 <style>
     body {
-        font-family: 'Anton', sans-serif;
-        background: linear-gradient(135deg, #FFE066, #FFF3B0);
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58); /* pastelowy żółty */
         padding: 24px;
         padding-bottom: 120px; 
         line-height: 1.6;
         background-size: cover;
         background-attachment: fixed;
         background-position: center center;
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        -webkit-text-stroke: 1px #000; /* kontur */
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    h1, h2, h3 {
+        color: #fff;
+        font-size: 32px;
+        -webkit-text-stroke: 1px #000;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    hr {
+        height: 6px;
+        border: none;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #9D4EDD, #C77DFF, #7B2CBF); /* kolor donuta */
+        margin: 28px 0;
+    }
+
+    ul li::marker, ol li::marker {
+        color: #9D4EDD; /* kolor markerów list */
+        font-size: 1.2em;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 30px;
-        background-color: #fff;
-        font-size: 18px;
+        background-color: rgba(0,0,0,0.3);
+        font-size: 20px;
+        color: #fff;
+        font-weight: bold;
+        -webkit-text-stroke: 1px #000;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
     th, td {
-        border: 2px solid #000;
+        border: 2px solid #9D4EDD;
         padding: 12px;
         text-align: center;
     }
 
     th {
-        background-color: #FFD43B;
+        background: linear-gradient(90deg, #9D4EDD, #C77DFF, #7B2CBF);
+        color: #fff;
+        -webkit-text-stroke: 1px #000;
     }
 
-    .foto-prawy-gorny {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 150px;
+    .footer {
+        position: fixed; 
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #9D4EDD, #C77DFF, #7B2CBF); /* jak donut */
+        padding: 15px 20px;
+        box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+        z-index: 1000; 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: #FFFFFF;
+        background-color: #590a8a;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        margin-right: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 </style>
 </head>
 
 <body>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Fortnite_F_lettermark_logo.png" class="foto-prawy-gorny">
-
-<h1>Poradnik gry Fortnite</h1>
-
-<p class="kolor">
-<b>Fortnite</b> to popularna gra typu <i>battle royale</i>, w której liczy się
-<u>strategia</u>, refleks oraz umiejętność budowania.
-</p>
-
-<p>
-W tym poradniku poznasz podstawowe zasady gry.<br>
-Dowiesz się także, jak poprawić swoje umiejętności.
-</p>
-
-<hr>
-
-<h2>Podstawowe informacje</h2>
-
-<p>
-Tryb gry: Battle Royale<sup>1</sup><br>
-Liczba graczy: 100<sub>max</sub>
-</p>
-
-<h3>Najważniejsze wskazówki</h3>
-
-<ul style="list-style-type: square;">
-<li>Zbieraj materiały do budowania</li>
-<li>Uważnie obserwuj mapę</li>
-<li>Trenuj celność</li>
-</ul>
-
-<h3>Kroki nauki gry</h3>
-
-<ol type="A">
-<li>Lądowanie w bezpiecznym miejscu</li>
-<li>Zbieranie broni</li>
-<li>Budowanie osłon</li>
-</ol>
-
-<h3>Pojęcia w Fortnite</h3>
-
-<dl>
-<dt>Loot</dt>
-<dd>Przedmioty i bronie znajdowane na mapie</dd>
-
-<dt>Storm</dt>
-<dd>Strefa, która zadaje obrażenia graczom poza bezpiecznym obszarem</dd>
-</dl>
-
-<h2>Duża tabela broni Fortnite</h2>
+<h2>Tabela broni Fortnite</h2>
 
 <table>
 <tr>
-<th>Nazwa broni</th>
-<th>Typ</th>
+<th>Broń</th>
 <th>Rzadkość</th>
 <th>Obrażenia</th>
 </tr>
 <tr>
-<td>Pistolet</td>
-<td>Broń lekka</td>
-<td>Zwykła</td>
-<td>25</td>
+<td>Karabin szturmowy</td>
+<td>Pospolita</td>
+<td>28</td>
 </tr>
 <tr>
 <td>Karabin szturmowy</td>
-<td>Automatyczna</td>
-<td>Niezwykła</td>
-<td>30</td>
+<td>Rzadka</td>
+<td>32</td>
 </tr>
 <tr>
-<td>Shotgun</td>
+<td>Karabin szturmowy</td>
+<td>Epicka</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Karabin szturmowy</td>
+<td>Legendarna</td>
+<td>40</td>
+</tr>
+
+<tr>
+<td>Strzelba</td>
+<td>Pospolita</td>
+<td>75</td>
+</tr>
+<tr>
 <td>Strzelba</td>
 <td>Rzadka</td>
 <td>85</td>
 </tr>
 <tr>
-<td>Snajperka</td>
-<td>Dystansowa</td>
+<td>Strzelba</td>
 <td>Epicka</td>
+<td>95</td>
+</tr>
+<tr>
+<td>Strzelba</td>
+<td>Legendarna</td>
+<td>105</td>
+</tr>
+
+<tr>
+<td>Karabin snajperski</td>
+<td>Pospolita</td>
+<td>90</td>
+</tr>
+<tr>
+<td>Karabin snajperski</td>
+<td>Rzadka</td>
 <td>105</td>
 </tr>
 <tr>
-<td>SMG</td>
-<td>Szybkostrzelna</td>
-<td>Zwykła</td>
-<td>22</td>
-</tr>
-<tr>
-<td>Rakietnica</td>
-<td>Wybuchowa</td>
-<td>Legendarna</td>
+<td>Karabin snajperski</td>
+<td>Epicka</td>
 <td>120</td>
 </tr>
 <tr>
-<td>Łuk</td>
-<td>Specjalna</td>
-<td>Rzadka</td>
-<td>70</td>
-</tr>
-<tr>
-<td>Minigun</td>
-<td>Ciężka</td>
-<td>Epicka</td>
-<td>21</td>
-</tr>
-<tr>
-<td>Pistolet maszynowy</td>
-<td>Automatyczna</td>
-<td>Niezwykła</td>
-<td>24</td>
-</tr>
-<tr>
-<td>Granat</td>
-<td>Wybuchowy</td>
-<td>Zwykła</td>
-<td>100</td>
+<td>Karabin snajperski</td>
+<td>Legendarna</td>
+<td>135</td>
 </tr>
 </table>
 
-<div style="
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #E6CCFF, #CFA8FF, #A77BFF, #6A0DAD);
-    padding: 15px 20px;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
-    z-index: 1000; 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;">
-    
-    <a href="index.html" style="
-    text-decoration: none;
-    color: #FFFFFF;
-    background-color: #590a8a;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 18px;
-    margin-right: 20px;">
-    Powrót do strony głównej
-</a>
+<div class="footer">
+    <a href="index.html">Powrót do strony głównej</a>
 </div>
 
 </body>
 </html>
+
 
 
 
