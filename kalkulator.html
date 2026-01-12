@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Kalkulator działań</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #FFF176, #FFD54F, #FFEE58);
+        padding: 24px;
+        line-height: 1.6;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+        padding-bottom: 120px;
+    }
+
+    h1 {
+        font-size: 48px;
+        background: linear-gradient(90deg, orange, darkgray);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        -webkit-text-stroke: 2px #000;
+        text-shadow: 3px 3px 8px rgba(0,0,0,0.7);
+        text-align: center;
+    }
+
+    form {
+        font-size: 24px;
+        font-weight: bold;
+        border: 2px solid rgba(0,0,0,0.2);
+        padding: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        display: block;
+        width: fit-content;
+        background: rgba(255,255,255,0.2);
+        color: #fff;
+        -webkit-text-stroke: 1px #000;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        font-size: 20px;
+        padding: 6px;
+        margin-top: 6px;
+    }
+
+    input[type="button"] {
+        background: #9D4EDD;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        margin-top: 10px;
+    }
+
+    input[type="button"]:hover {
+        background: #7B2CBF;
+    }
+
+    hr {
+        height: 6px;
+        border: none;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #9D4EDD, #C77DFF, #7B2CBF);
+        margin: 28px 0;
+    }
+
+    /* STOPKA */
+    .footer {
+        position: fixed; 
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #9D4EDD, #C77DFF, #7B2CBF);
+        padding: 15px 20px;
+        box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+        z-index: 1000; 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: #FFFFFF;
+        background-color: #590a8a;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        margin-right: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Kalkulator działań matematycznych</h1>
+<hr>
+
+<script>
+function dodawanie() {
+    var skl1 = parseFloat(document.forms[0].elements[0].value);
+    var skl2 = parseFloat(document.forms[0].elements[1].value);
+    alert(skl1 + skl2);
+}
+
+function odejmowanie() {
+    var skl1 = parseFloat(document.forms[1].elements[0].value);
+    var skl2 = parseFloat(document.forms[1].elements[1].value);
+    alert(skl1 - skl2);
+}
+
+function iloraz() {
+    var skl1 = parseFloat(document.forms[2].elements[0].value);
+    var skl2 = parseFloat(document.forms[2].elements[1].value);
+    if (skl2 == 0) alert("Nie można dzielić przez 0!");
+    else alert(skl1 / skl2);
+}
+
+function iloczyn() {
+    var skl1 = parseFloat(document.forms[3].elements[0].value);
+    var skl2 = parseFloat(document.forms[3].elements[1].value);
+    alert(skl1 * skl2);
+}
+</script>
+
+<form>
+a = <input type="text" name="a"><br>
+b = <input type="text" name="b"><br>
+<input type="button" value="Oblicz sumę" onclick="dodawanie()">
+</form>
+
+<hr>
+
+<form>
+x = <input type="text" name="x"><br>
+y = <input type="text" name="y"><br>
+<input type="button" value="Oblicz różnicę" onclick="odejmowanie()">
+</form>
+
+<form>
+d = <input type="text" name="d"><br>
+c = <input type="text" name="c"><br>
+<input type="button" value="Oblicz iloraz" onclick="iloraz()">
+</form>
+
+<form>
+f = <input type="text" name="f"><br>
+h = <input type="text" name="h"><br>
+<input type="button" value="Oblicz iloczyn" onclick="iloczyn()">
+</form>
+
+<div class="footer">
+    <a href="index.html">Powrót do strony głównej</a>
+</div>
+
+</body>
+</html>
